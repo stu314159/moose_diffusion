@@ -17,7 +17,7 @@
 
 [Kernels]
   [./diff]
-    type = Diffusion
+    type = ADDiffusion
     variable = u
   [../]
 []
@@ -39,7 +39,10 @@
 
 [Executioner]
   type = Steady
-  solve_type = PJFNK
+  #solve_type = PJFNK
+  solve_type = NEWTON
+  petsc_options_iname = '-pc_type -pc_hypre_type'
+  petsc_options_value = 'hypre boomeramg'
 []
 
 [Outputs]
