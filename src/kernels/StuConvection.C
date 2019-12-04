@@ -1,6 +1,6 @@
 #include "StuConvection.h"
 
-registerMooseObject("MooseDiffusion",StuConvection);
+registerMooseObject("MooseDiffusionApp",StuConvection);
 
 template<>
 InputParameters
