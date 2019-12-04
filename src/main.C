@@ -13,6 +13,9 @@
 #include "MooseApp.h"
 #include "AppFactory.h"
 
+// include files for my kernels
+#include "StuConvection.h"
+
 // Create a performance log
 PerfLog Moose::perf_log("MooseDiffusion");
 
