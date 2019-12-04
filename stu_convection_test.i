@@ -17,17 +17,31 @@
     order= SECOND
     family = LAGRANGE
   []
-  [InitialCondition]
-    type = FunctionIC
-    function = ic
-  []
 []
 
 [Functions]
   [ic]
     type = ParsedFunction
-    variable = convected
     value = exp(-(x*x))
+  []
+[]
+
+[ICs]
+  [ic]
+    type = FunctionIC
+    variable = convected
+    function = ic
+  []
+[]
+
+[BCs]
+  [Periodic]
+    [x]
+    variable = convected
+    primary = 'left'
+    secondary = 'right'
+    translation = '10 0 0'
+    []
   []
 []
 
@@ -52,8 +66,8 @@
 [Executioner]
   type = Transient
   solve_type = 'PJFNK'
-  dt = 1E-3
-  end_time = 0.01
+  dt = 1E-1
+  end_time = 3.0
 []
 
 [Outputs]
