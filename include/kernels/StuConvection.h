@@ -11,6 +11,7 @@ InputParameters validParams<StuConvection>();
 // actual class declaration
 class StuConvection : public Kernel
 {
+public:
   // constructor
   StuConvection(const InputParameters & parameters);
   
